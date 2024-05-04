@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Success</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .tick-logo {
+            font-size: 72px;
+            color: green;
+            margin-top: 50px;
+        }
+        .customer-name {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .order-message {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .products-list {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tick-logo">&#10004;</div>
+    <div class="customer-name" id="customerName"></div>
+    <div class="order-message">Your order has been successfully placed.</div>
+    <div class="products-list" id="productsList"></div>
+
+    <script>
+    // Retrieve query parameters from the URL
+    var queryParams = new URLSearchParams(window.location.search);
+    var customerName = queryParams.get("name");
+    var checkedItems = queryParams.get("items").split(',');
+
+    // Display the customer name and checked items
+    document.getElementById("customerName").innerText = "Customer Name: " + customerName;
+    document.getElementById("checkedItems").innerText = "Checked Items: " + checkedItems.join(', ');
+</script>
+
+<!-- HTML to display the customer name and checked items -->
+<p id="customerName"></p>
+<p id="checkedItems"></p>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Raj Cafe</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: yellow; /* Change background color to yellow */
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .menu-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        .menu-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+        .dish-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .order-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #ff4500;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Raj Cafe</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <div class="menu">
+        <div class="menu-item">
+            <h2>Beverages</h2>
+            <ul>
+                <li>
+                    <img src="beverages.jpg" alt="Beverages">
+                    <span class="dish-name">Cold Drink</span>
+                    <input type="checkbox" name="beverage[]" value="Cold Drink">
+                </li>
+                <li>
+                    <img src="beverages.jpg" alt="Beverages">
+                    <span class="dish-name">Mango Shake</span>
+                    <input type="checkbox" name="beverage[]" value="Mango Shake">
+                </li>
+                <li>
+                    <img src="beverages.jpg" alt="Beverages">
+                    <span class="dish-name">Banana Shake</span>
+                    <input type="checkbox" name="beverage[]" value="Banana Shake">
+                </li>
+                <li>
+                    <img src="beverages.jpg" alt="Beverages">
+                    <span class="dish-name">Fruit Juice</span>
+                    <input type="checkbox" name="beverage[]" value="Fruit Juice">
+                </li>
+                <!-- Add more beverage items here -->
+            </ul>
+        </div>
+        <div class="menu-item">
+            <h2>Appetizers</h2>
+            <ul>
+                <li>
+                    <img src="appetizers.jpg" alt="Appetizers">
+                    <span class="dish-name">Pizza</span>
+                    <input type="checkbox" name="appetizer[]" value="Pizza">
+                </li>
+                <li>
+                    <img src="appetizers.jpg" alt="Appetizers">
+                    <span class="dish-name">Burger</span>
+                    <input type="checkbox" name="appetizer[]" value="Burger">
+                </li>
+                <li>
+                    <img src="appetizers.jpg" alt="Appetizers">
+                    <span class="dish-name">Spring Roll</span>
+                    <input type="checkbox" name="appetizer[]" value="Spring Roll">
+                </li>
+                <li>
+                    <img src="appetizers.jpg" alt="Appetizers">
+                    <span class="dish-name">Garlic Bread</span>
+                    <input type="checkbox" name="appetizer[]" value="Garlic Bread">
+                </li>
+                <!-- Add more appetizer items here -->
+            </ul>
+        </div>
+        <!-- Add more menu sections as needed -->
+    </div>
+    <button class="order-button" onclick="location.href='raj cafe 3.html'">Order</button>
+    <footer>
+        <p>&copy; 2024 Raj Cafe. All rights reserved.</p>
+    </footer>
+</body>
+</html>

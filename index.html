@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Raj Cafe</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        #otpCode {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        input[type="tel"], input[type="number"] {
+            width: calc(50% - 10px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ff4500;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        button:hover {
+            background-color: #ff5722;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login to Raj Cafe</h2>
+        <input type="tel" id="mobileNumber" placeholder="Enter Mobile Number" required maxlength="10">
+        <button id="validateBtn" onclick="generateOTP()">Validate</button>
+        <br>
+        <input type="number" id="otpInput" placeholder="Enter OTP" maxlength="4" disabled>
+        <button id="loginBtn" onclick="login()">Login</button>
+        <div id="otpCode"></div>
+    </div>
+
+    <script>
+        function generateOTP() {
+            var mobileNumber = document.getElementById("mobileNumber").value;
+            if (mobileNumber.length === 10 && !isNaN(mobileNumber)) {
+                // Generate random 4-digit OTP
+                var otp = Math.floor(1000 + Math.random() * 9000);
+                document.getElementById("otpCode").innerText = "OTP: " + otp;
+                document.getElementById("otpCode").setAttribute("title", "OTP");
+                document.getElementById("otpInput").removeAttribute("disabled");
+                document.getElementById("loginBtn").removeAttribute("disabled");
+            } else {
+                alert("Please enter a valid 10-digit mobile number.");
+            }
+        }
+
+        function login() {
+            var enteredOTP = document.getElementById("otpInput").value;
+            var otpCode = document.getElementById("otpCode").innerText.split(": ")[1];
+
+            if (enteredOTP === otpCode) {
+                // Redirect to the next page
+                window.location.href = "RAJ CAFE .html"
+            } else {
+                alert("Incorrect OTP. Please try again.");
+                generateOTP(); // Resend OTP
+            }
+        }
+    </script>
+</body>
+</html>
